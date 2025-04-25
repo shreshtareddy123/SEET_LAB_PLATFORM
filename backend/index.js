@@ -6,6 +6,7 @@ const protectedRoutes = require('./routes/protectedRoutes');
 const eventRoutes = require('./routes/eventRoutes');
 const bookingRoutes = require('./routes/bookingRoutes');
 const userRoutes = require('./routes/userRoutes');
+const notificationRoutes = require('./routes/notificationRoutes');
 
 dotenv.config();
 const app = express();
@@ -26,6 +27,8 @@ app.use('/api', protectedRoutes);
 app.use('/api/events', eventRoutes);
 app.use('/api/events', bookingRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/notifications', notificationRoutes);
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
